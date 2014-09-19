@@ -36,6 +36,8 @@ class Geco
           next if number.blank?
           send_text(number, "New GeCo 2014 Happening: #{url_to_send(record_id)}")
         end
+
+        "Success"
       end
 
     private
