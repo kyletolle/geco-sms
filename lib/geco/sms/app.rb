@@ -90,14 +90,22 @@ class Geco
       end
 
       def send_text(number, message)
-        @twilio_client ||=
-          Twilio::REST::Client.new(twilio_sid, twilio_token)
+        begin
+          @twilio_client ||=
+            Twilio::REST::Client.new(twilio_sid, twilio_token)
 
-        @twilio_client.account.messages.create(
-          from: twilio_number,
-          to:   number,
-          body: message
-        )
+          @twilio_client.account.messages.create(
+            from: twilio_number,
+            to:   number,
+            body: message
+          )
+
+        rescue StandardError => e
+          $stderr.puts "Error: Couldn't send sms to #{number}..."
+          $stderr.puts "Details: #{e.inspect}"
+          $stderr.puts "Backtrace:"
+          $stderr.puts e.backtrace.join("\n")
+        end
       end
 
       run! if app_file == $0
