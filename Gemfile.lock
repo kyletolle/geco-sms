@@ -23,7 +23,7 @@ GEM
       faraday (~> 0.9.0)
       faraday_middleware
     i18n (0.6.11)
-    json (1.8.1)
+    json (1.8.6)
     jwt (1.0.0)
     minitest (5.4.1)
     multi_json (1.10.1)
@@ -55,3 +55,9 @@ DEPENDENCIES
   rake (~> 10.3.2)
   sinatra (~> 1.4.5)
   twilio-ruby (~> 3.12)
+
+RUBY VERSION
+   ruby 2.7.0p0
+
+BUNDLED WITH
+   2.1.4
