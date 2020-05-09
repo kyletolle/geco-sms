@@ -42,7 +42,7 @@ class Geco
 
     private
       def api
-        @api ||= Fulcrum::Client.new api_key
+        @api ||= Fulcrum::Client.new api_key, 'http://localhost:3000/api/v2'
       end
 
       def api_key
